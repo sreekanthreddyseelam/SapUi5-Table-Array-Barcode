@@ -1,0 +1,45 @@
+<mvc:View controllerName="com.de.Worklist.controller.Worklist" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:tnt="sap.tnt" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table"
+	xmlns:fb="sap.ui.comp.filterbar">
+	<Page title="Product Details" enableScrolling="true">
+		<Table id="idProductsTable" inset="false" items="{ path: 'oProductsDataModel>/results', sorter: { path: 'Name' } }">
+			<headerToolbar>
+				<Toolbar>
+					<ToolbarSpacer width="70em"/>
+					<SearchField id="sSearchFieldID" width="auto" class="sapUiSmallMargin" liveChange="onHandleSearch"/>
+					<Button text="Bar" press="onbarcodescan"></Button>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://add" text="Add" press="onAddTable2Press"></Button>
+				</Toolbar>
+			</headerToolbar>
+			<columns>
+				<Column>
+					<Text text="Product"/>
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true">
+					<Text text="SupplierID"/>
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true">
+					<Text text="UnitsInStock "/>
+				</Column>
+				<Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+					<Text text="Discontinued"/>
+				</Column>
+				<Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+					<Text text=""/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem type="Navigation" press="onHandletablepress">
+					<cells>
+						<ObjectIdentifier title="{oProductsDataModel>ProductName}" text="{oProductsDataModel>ProductID}"/>
+						<ObjectNumber number="{path:'oProductsDataModel>SupplierID', formatter:'.formatter.onNumberChange'}"/>
+						<Text text="{oProductsDataModel>UnitsInStock}"/>
+						<Text text="{oProductsDataModel>Discontinued}"/>
+						<Button icon="sap-icon://delete" press="onDeleteTableData"></Button>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

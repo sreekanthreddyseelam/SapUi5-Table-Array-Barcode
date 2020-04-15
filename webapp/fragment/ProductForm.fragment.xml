@@ -1,0 +1,26 @@
+<core:FragmentDefinition
+xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:tnt="sap.tnt" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table"
+	xmlns:fb="sap.ui.comp.filterbar">
+		<f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+						labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2"
+						columnsL="2" columnsM="2" singleContainerFullSize="false" class="backgroundcolorform">
+						<f:content>
+							<core:Title text=""/>
+							<Label text="Products ID"/>
+							<Input value="{oProductDetailModel>/ProductID}"/>
+							<Label text="SupplierID"/>
+							<Input  value="{oProductDetailModel>/SupplierID}"></Input>
+							<Label text="CategoryID"/>
+							<Input  value="{oProductDetailModel>/CategoryID}"/>
+							<Label text="QuantityPerUnit"/>
+							<Input value="{oProductDetailModel>/QuantityPerUnit}"/>
+							<core:Title text=""/>
+							<Label text="UnitsOnOrder"/>
+							<Input value="{oProductDetailModel>/UnitsOnOrder}"/>
+							<Label text="UnitsInStock"/>
+							<Input value="{oProductDetailModel>/UnitsInStock}"></Input>
+						
+						</f:content>
+					</f:SimpleForm>
+</core:FragmentDefinition>

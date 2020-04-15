@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form" xmlns:tnt="sap.tnt" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns:fb="sap.ui.comp.filterbar">
+	<Table id="idAddTable" inset="false" items="{ path: 'oTempModel>/Customerarray', sorter: { path: 'Name' } }" class="sapUiSizeCompact">
+		<headerToolbar>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://add" text="Add" press="onAddTablePress"></Button>
+				<SearchField id="sSearchFieldID" width="auto" class="sapUiSmallMargin" liveChange="onHandleSearch"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Customer ID"/>
+			</Column>
+			<Column>
+				<Text text="Customer Name"/>
+			</Column>
+			<Column>
+				<Text text="Location"/>
+			</Column>
+			<Column>
+				<Text text="Postal Code"/>
+			</Column>
+			<Column>
+				<Text text=""/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem type="Navigation" press="onHandletablepress">
+				<cells>
+					<Input value="{oTempModel>CustomerId}" liveChange="onInputChange" valueState="{oTempModel>valueStateCustID}"
+						valueStateText="{oTempModel>valueStateTextCustID}" showValueHelp="true" valueHelpRequest="onHandleDialogOpen"/>
+					<Input value="{oTempModel>CustomerName}" liveChange="onInputChange" valueState="{oTempModel>valueStateCustName}"
+						valueStateText="{oTempModel>valueStateTextCustName}"/>
+					<Input value="{oTempModel>Location}" liveChange="onInputChange" valueState="{oTempModel>valueStateCustLocation}"
+						valueStateText="{oTempModel>valueStateTextCustLocation}"/>
+					<Input value="{oTempModel>PostalCode}" liveChange="onInputChange" valueState="{oTempModel>valueStateCustPostalCode}"
+						valueStateText="{oTempModel>valueStateTextCustPostalCode}"/>
+					<Button icon="sap-icon://delete" press="onDeleteTableData"></Button>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

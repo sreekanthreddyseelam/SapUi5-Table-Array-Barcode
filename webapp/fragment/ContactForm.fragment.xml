@@ -1,0 +1,33 @@
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form" xmlns:tnt="sap.tnt" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" xmlns:fb="sap.ui.comp.filterbar">
+	<f:SimpleForm id="SimpleFormChange123" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12"
+		labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+		singleContainerFullSize="false" class="contactform">
+		<f:content>
+			<core:Title text=""/>
+			<Label text="FirstName"/>
+			<Input value="{}"/>
+			<Label text="LastName"/>
+			<Input value="{}"></Input>
+			<Label text="EMail" labelFor="emailInput"/>
+			<Input id="emailInput" class="sapUiSmallMarginBottom" type="Email" placeholder="Enter E-Mail ..." valueStateText="{oContactmodel>/valueStateText}"
+				valueState="{oContactmodel>/valueState}"/>
+			<Label text="Telephone" labelFor="inputTel"/>
+			<Input id="inputTel" liveChange="onTelNumChange"  type="Tel" class="sapUiSmallMarginBottom" placeholder="Enter Telephone Number ..."
+				valueStateText="{oContactmodel>/valueStateText}" valueState="{oContactmodel>/valueState1}"/>
+			<core:Title text=""/>
+			<Label text="DOB" labelFor="DP1"/>
+			<DatePicker id="DP1" placeholder="Enter Date ..." change="handleChange" class="sapUiSmallMarginBottom"/>
+			<ToolbarSpacer/>
+			<Label text="Gender"/>
+			<InputListItem label="Male">
+				<Switch state="flase"/>
+			</InputListItem>
+			<InputListItem label="FeMale">
+				<Switch state="flase"/>
+			</InputListItem>
+			<ToolbarSpacer width="4em"/>
+			<VBox><Button text="Submit" press="onContinue"/></VBox>
+		</f:content>
+	</f:SimpleForm>
+</core:FragmentDefinition>

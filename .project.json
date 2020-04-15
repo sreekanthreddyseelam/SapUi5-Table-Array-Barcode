@@ -1,0 +1,28 @@
+{
+  "generation": [
+    {
+      "templateId": "servicecatalog.connectivityComponent",
+      "templateVersion": "0.0.0",
+      "dateTimeStamp": "Mon, 29 Jan 2018 09:14:44 GMT"
+    }
+  ],
+  "mockpreview": {
+    "mockUri": "/northwind/V2/Northwind/Northwind.svc",
+    "metadataFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "hcpdeploy": {
+    "account": "p1942190190trial",
+    "name": "carouselzengagement",
+    "lastVersionWeTriedToDeploy": "1.0.0"
+  },
+  "hybrid": {
+    "FacadeConfig": {
+      "cordova-plugin-device-orientation": false,
+      "accelerometer": {},
+      "compass": {}
+    }
+  }
+}

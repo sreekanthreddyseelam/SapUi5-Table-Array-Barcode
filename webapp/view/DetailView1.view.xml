@@ -1,0 +1,41 @@
+<mvc:View controllerName="com.de.Worklist.controller.DetailView1" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:tnt="sap.tnt" xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table"
+	xmlns:fb="sap.ui.comp.filterbar">
+	<Page title="Product Details" enableScrolling="true">
+		<ObjectHeader title="{oProductDetailModel>/ProductName}" number="{oProductDetailModel>/ProductID}" class="sapUiResponsivePadding--header">
+			<statuses>
+				<ObjectStatus text="{path:'oProductDetailModel>/SupplierID', formatter:'.formatter.onNumberChange'}"/>
+			
+			</statuses>
+			<ObjectAttribute text="{oProductDetailModel>/QuantityPerUnit}"/>
+		</ObjectHeader>
+		<IconTabBar id="idIconTabBarMulti" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding ">
+			<items>
+				<IconTabFilter text="Info">
+					<Panel expandable="true" expanded="true" headerText="Product Details Form" width="auto" class="sapUiResponsiveMargin">
+						<content>
+							<core:Fragment fragmentName="com.de.Worklist.fragment.ProductForm" type="XML"></core:Fragment>
+						</content>
+					</Panel>
+				</IconTabFilter>
+				<IconTabFilter text="Activities">
+					<core:Fragment fragmentName="com.de.Worklist.fragment.AddTable" type="XML"></core:Fragment>
+				</IconTabFilter>
+				<IconTabFilter text="ContactForm">
+					<core:Fragment fragmentName="com.de.Worklist.fragment.ContactForm" type="XML"></core:Fragment>
+				</IconTabFilter>
+				<IconTabFilter text="Attachments">
+					<HBox>
+						<ToolbarSpacer/>
+						<Input id="Slider1" type="Text" valueHelpRequest="handleValueHelp" width="90%"></Input>
+						<Input id="Slider2" type="Text" valueHelpRequest="handleValueHelp" width="90%"></Input>
+						<Button type="Emphasized" text="submit" press="onSlider"/>
+					</HBox>
+					<ToolbarSpacer/>
+					<Slider value="{oSliderModel>/SliderValue}" width="20%" min="0" max="100" showAdvancedTooltip="true" showHandleTooltip="false" inputsAsTooltips="true"
+						class="sapUiMediumMarginBottom"/>
+				</IconTabFilter>
+			</items>
+		</IconTabBar>
+	</Page>
+</mvc:View>

@@ -1,0 +1,19 @@
+
+
+.labelfontsize{
+    color: #666666;
+    font-size: 1.875rem;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: normal;
+}
+
+.backgroundcolorform{
+background-color: #f4f4f4;
+    border: #0e0d0d solid 4px;
+}
+.contactform{
+	background-color: #faf4ff;
+    border: #0e0d0d solid 4px;
+    margin-top: 60px;
+}
+	

@@ -1,0 +1,136 @@
+{
+	"_version": "1.4.0",
+	"sap.app": {
+		"id": "com.de.Worklist",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/northwind/V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "com.de.Worklist.view.App",
+			"type": "XML",
+			"id": "Appid"
+		},
+		"config": {
+			"fullWidth": true
+		},
+		"dependencies": {
+			"minUI5Version": "1.36.0",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.36.0"
+				},
+				"sap.m": {
+					"minVersion": "1.36.0"
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.de.Worklist.i18n.i18n"
+				}
+			},
+			"": {
+				"dataSource": "mainService",
+				"settings": {
+					"metadataUrlParams": {
+						"sap-documentation": "heading"
+					}
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.de.Worklist.view",
+				"controlId": "Appid",
+				"controlAggregation": "detailPages",
+				"bypassed": {
+					"target": [
+						"object"
+					]
+				},
+				"async": true
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "object",
+				"target": [
+					"object"
+				]
+			},
+			{
+				"pattern": "detailview1",
+				"name": "detailview1",
+				"target": [
+					"detailview1"
+				]
+			}],
+			"targets": {
+				"object": {
+					"controlId": "Appid",
+					"viewPath": "com.de.Worklist.view",
+					"viewName": "Worklist",
+					"controlAggregation": "pages"
+				},
+				"detailview1": {
+					"controlId": "Appid",
+					"viewPath": "com.de.Worklist.view",
+					"viewName": "DetailView1",
+					"controlAggregation": "pages"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/pweaver/zaes",
+		"_version": "1.1.0"
+	}
+}
